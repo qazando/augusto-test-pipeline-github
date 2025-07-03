@@ -1,7 +1,8 @@
 name: Disparo manual
 
-on: 
-  workflow_dispatch: # Permite disparar manualmente o workflow
+on:
+  schedule:
+    - cron: '0 8 * * 1-5'
 
 jobs:
   cypress-run:
@@ -24,3 +25,9 @@ jobs:
           path: mochawesome-report # Caminho onde o relatório está salvo
           retention-days: 3 # Define que o artifact expira em 3 dias
       
+      - name: rodar os testes por curl
+        run: |
+          curl -X POST https://api.github.com/repos/SeuUsuario/SeuRepositorio/actions/workflows/pr-request.yml/dispatches \
+          -H "Accept: application/vnd.github.v3+json" \
+          -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+          -d '{"ref":"master"}'
