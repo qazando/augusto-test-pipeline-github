@@ -12,6 +12,7 @@ describe("Login", () => {
     // cy.preencheEmail("23762732736");
     // cy.preencheSenha("121212");
     // cy.fazerLogin();
+    // cy.fazerLogin();
   });
 
   it("Login com email vazio", () => {
