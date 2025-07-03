@@ -1,8 +1,8 @@
-name: Cypress Tests
+name: Disparo manual
 
 on: 
   workflow_dispatch: # Permite disparar manualmente o workflow
-  
+
 jobs:
   cypress-run:
     runs-on: ubuntu-22.04
