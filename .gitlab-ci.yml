@@ -1,0 +1,24 @@
+stages:         
+  - testedev
+  - testehml
+  - testeprod
+  - testes
+
+teste-dev:       
+  stage: testes
+  script:
+    - echo "Imaginando que o teste ta rodando"
+  only:
+    - merge_requests
+
+teste-hml:  
+  stage: testes   
+  script:
+    - echo "Imaginando que o teste ta rodando"
+  only:
+    - merge_requests
+
+testeprod:   
+  stage: testes   
+  script:
+    - echo "Imaginando que o teste ta rodando"
